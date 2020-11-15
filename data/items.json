@@ -1,0 +1,16 @@
+[{
+        "name": "banana",
+        "fibers": 2.6,
+        "img": "./public/images/default.jpeg"
+    },
+    {
+        "name": "apple",
+        "fibers": 1.3,
+        "img": "./public/images/default.jpeg"
+    },
+    {
+        "name": "milk",
+        "fibers": 1.3,
+        "img": "./public/images/default.jpeg"
+    }
+]
