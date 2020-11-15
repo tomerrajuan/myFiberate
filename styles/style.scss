@@ -1,3 +1,17 @@
 * {
     margin: 0;
 }
+
+.highlight {
+    background-color: orange;
+    opacity: 0.9;
+    font-family: black;
+    cursor: pointer;
+}
+
+.list-group-item {
+    text-transform: capitalize;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}

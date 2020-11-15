@@ -1,5 +1,6 @@
 const search = document.getElementById("search");
 const matchList = document.getElementById("match-list");
+var list = [];
 
 const searchItems = async searchText => {
     const res = await fetch("./data/items.json");
@@ -13,17 +14,25 @@ const searchItems = async searchText => {
         matchList.innerHTML = ""
     }
     outputHtml(matches)
+    list = matches;
 };
 
 const outputHtml = matches => {
     if (matches.length > 0) {
         const html = matches.map(match => `
-       <div class="card card-body mb-1">
-        <h4>${match.name}</h4>
-       </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">${match.name}</li>
+        </ul>
        `).join("")
         matchList.innerHTML = html;
     }
 }
+
+
+matchList.addEventListener("mousedown", function(e) {
+    console.log("click happening");
+    search.value = $(e.target).text();
+    $("#match-list").hide();
+});
 
 search.addEventListener("input", () => searchItems(search.value));
